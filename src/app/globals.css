@@ -23,4 +23,40 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+
+  main {
+    @apply my-10 py-10;
+
+    > section {
+      @apply min-h-screen;
+      @apply max-w-md mx-auto;
+    }
+  }
+
+  table {
+    @apply w-full;
+    @apply text-center text-xs sm:text-sm;
+
+    tr {
+      @apply border-b;
+    }
+
+    th,
+    td {
+      @apply px-2 py-1;
+      @apply border-r border-r-zinc-300;
+    }
+
+    th:first-child {
+      @apply border-r border-black;
+    }
+    /* th:nth-of-type(1) {
+      @apply border-r border-black;
+    } */
+
+    th:last-child,
+    td:last-child {
+      @apply border-r border-black;
+    }
+  }
 }
