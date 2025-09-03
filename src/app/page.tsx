@@ -1,24 +1,62 @@
+"use client";
+
 import Sajupalza from "@/components/sajupalza";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <main className="my-20">
       <section>
         <h1 className="sr-only">Rocket AI 과제</h1>
 
-        <div className="bg-zinc-100 h-[1000px] relative ">
-          {/* 타이틀 */}
-          <div className="text-center  translate-y-20">
-            <h1>제 1장</h1>
-            <p>나의 사주팔자</p>
+        {/* 블록 컨테이너 */}
+        <div className="relative">
+          {/* 여자 배경 이미지 */}
+          <div>
+            <Image
+              src={
+                "https://res.cloudinary.com/dzktdrw7o/image/upload/v1756862526/rocket-ai/%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8_%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%8B%E1%85%B3%E1%86%B7_udcg6s.png"
+              }
+              width={1000}
+              height={1000}
+              alt=""
+            />
           </div>
 
-          {/* 말풍선 */}
+          {/* 말풍선(컨테이너) */}
           <div
-            className="w-1/2 aspect-3/2 p-4 border flex items-center justify-center rounded-[50%/50%] text-center bg-white
-            absolute top-1/2 left-1/12 -translate-y-1/2"
+            className="
+            absolute bottom-0 left-[10%] 
+            w-[calc(215*var(--scale))]
+            mb-[calc(30*var(--scale))]
+            "
           >
-            이제 본격적으로 로켓님의 사주팔자를 분석해볼 차례네요
+            {/* 이미지 */}
+            <div>
+              <Image
+                src={
+                  "https://res.cloudinary.com/dzktdrw7o/image/upload/v1756862629/rocket-ai/Group_1410141556_jifcb8.png"
+                }
+                width={1000}
+                height={1000}
+                alt=""
+              />
+            </div>
+
+            {/* 텍스트 */}
+            <div
+              // --scale변수에서 사용된 %는 텍스트에 적용되지 않는다. 텍스트는 vw에 반응하도록 clamp 처리
+              className="text-black 
+              absolute inset-0 
+              flex flex-col items-center justify-center 
+              text-[clamp(8px,4vw,18px)]
+              pt-[calc(25*var(--scale))]
+              "
+            >
+              <p>이제 본격적으로</p>
+              <p>OO님의 사주팔자를</p>
+              <p>분석해볼 차례네요.</p>
+            </div>
           </div>
         </div>
 
@@ -27,3 +65,14 @@ export default function Home() {
     </main>
   );
 }
+
+// # 블록 컨테이너 1
+// 최상위 블록 컨테이너 -> relative 으로 기준
+// 1. 여자 배경 이미지
+// 이미지 -> aspect-[1/2] 로 가로세로가 부모요소에 반응
+// 2. 말풍선
+// 컨테이너 -> w-[calc(215*var(--scale))] 으로 가로크기가 부모요소에 반응 (스케일은 %)
+// 컨테이너 -> mb-[calc(30*var(--scale))] 으로 위치조정하는데 부모요소에 반응
+// 이미지 -> 원본 이미지 비율
+// 텍스트 -> text-[clamp(8px,4vw,18px)] 으로 크기가 뷰포트에 반응
+// 텍스트 -> pt-[calc(25*var(--scale))] 으로 위치조정하는데 부모요소에 반응

@@ -1,3 +1,5 @@
+"use client";
+
 export default function Sajupalza() {
   // 테이블 컬럼
   const columns = [
@@ -66,7 +68,7 @@ export default function Sajupalza() {
   ];
 
   return (
-    <div>
+    <div className="">
       <div className="text-center py-10">
         <h1 className="text-lg">김로켓님의 사주</h1>
         <p className="text-2xl">1980년 8월 27일 08:10</p>

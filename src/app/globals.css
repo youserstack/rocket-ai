@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* 모바일 375픽셀을 기준으로 스케일이 유동적으로 변경 */
+  /* 전체화면에 맞추려면 100vw */
+  /* 부모요소에 맞추려면 100% */
+  --scale: calc(100% / 375);
 }
 
 @theme inline {
@@ -25,8 +30,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 
   main {
-    @apply my-10 py-10;
-
     > section {
       @apply min-h-screen;
       @apply max-w-md mx-auto;
@@ -34,8 +37,9 @@ body {
   }
 
   table {
-    @apply w-full;
-    @apply text-center text-xs sm:text-sm;
+    @apply w-full h-full;
+    @apply text-center;
+    @apply text-[clamp(8px,3vw,14px)];
 
     tr {
       @apply border-b;
@@ -47,15 +51,12 @@ body {
       @apply border-r border-r-zinc-300;
     }
 
-    th:first-child {
+    th:first-of-type {
       @apply border-r border-black;
     }
-    /* th:nth-of-type(1) {
-      @apply border-r border-black;
-    } */
 
-    th:last-child,
-    td:last-child {
+    th:last-of-type,
+    td:last-of-type {
       @apply border-r border-black;
     }
   }
