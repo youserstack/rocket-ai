@@ -7,7 +7,10 @@
   /* 모바일 375픽셀을 기준으로 스케일이 유동적으로 변경 */
   /* 전체화면에 맞추려면 100vw */
   /* 부모요소에 맞추려면 100% */
+  /* --scale: calc(100cqw / 375); */
   --scale: calc(100% / 375);
+  --text-scale: calc(100vw / 375);
+  --table-text-scale: calc(16 * var(--text-scale));
 }
 
 @theme inline {
@@ -37,9 +40,9 @@ body {
   }
 
   table {
-    @apply w-full h-full;
     @apply text-center;
-    @apply text-[clamp(8px,3vw,14px)];
+    @apply text-[clamp(0rem,var(--table-text-scale),1rem)];
+    @apply pt-100;
 
     tr {
       @apply border-b;
@@ -47,8 +50,9 @@ body {
 
     th,
     td {
-      @apply px-2 py-1;
       @apply border-r border-r-zinc-300;
+      /* @apply py-[var(--text-scale)]; */
+      /* padding-block: calc(3px * var(--text-scale)); */
     }
 
     th:first-of-type {

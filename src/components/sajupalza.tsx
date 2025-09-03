@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Sajupalza() {
   // 테이블 컬럼
   const columns = [
@@ -68,13 +70,19 @@ export default function Sajupalza() {
   ];
 
   return (
-    <div className="">
-      <div className="text-center py-10">
-        <h1 className="text-lg">김로켓님의 사주</h1>
-        <p className="text-2xl">1980년 8월 27일 08:10</p>
+    <div className="relative ">
+      <div className="absolute inset-0 z-[-1] ">
+        <Image
+          src={
+            "https://res.cloudinary.com/dzktdrw7o/image/upload/v1756863875/rocket-ai/Frame_1410141530_zxfsjs.png"
+          }
+          alt=""
+          width={1000}
+          height={1000}
+        />
       </div>
 
-      <table>
+      <table className="w-[80%] mx-auto translate-y-[calc(170*var(--scale))]">
         <thead>
           <tr>
             <th></th>

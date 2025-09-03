@@ -6,10 +6,10 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="my-20">
-      <section>
+      <section className="space-y-30 /last:space-y-0">
         <h1 className="sr-only">Rocket AI 과제</h1>
 
-        {/* 블록 컨테이너 */}
+        {/* 블록 컨테이너 1 */}
         <div className="relative">
           {/* 여자 배경 이미지 */}
           <div>
@@ -60,7 +60,35 @@ export default function Home() {
           </div>
         </div>
 
-        <Sajupalza />
+        {/* 블록 컨테이너 2 */}
+        <div className="mt-30">
+          <div>
+            <Image
+              src={
+                "https://res.cloudinary.com/dzktdrw7o/image/upload/v1756863157/rocket-ai/Group_1410141673_f59thx.png"
+              }
+              alt=""
+              width={1000}
+              height={1000}
+            />
+          </div>
+        </div>
+
+        {/* 블록 컨테이터 3 */}
+        <div>
+          <div>
+            <Image
+              src={
+                "https://res.cloudinary.com/dzktdrw7o/image/upload/v1756863151/rocket-ai/00637-3702098316_1_am9wfl.png"
+              }
+              alt=""
+              width={1000}
+              height={1000}
+            />
+          </div>
+          <div className="py-5"></div>
+          <Sajupalza />
+        </div>
       </section>
     </main>
   );
