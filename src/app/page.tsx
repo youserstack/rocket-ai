@@ -26,7 +26,7 @@ export default function Home() {
           {/* 말풍선(컨테이너) */}
           <div
             className="
-            absolute bottom-0 left-[10%] 
+            absolute bottom-0 left-[10%] z-10
             w-[calc(215*var(--parent-scale))]
             mb-[calc(30*var(--parent-scale))]
             "
@@ -80,7 +80,7 @@ export default function Home() {
           {/* 말풍선(컨테이너) */}
           <div
             className="
-            absolute top-0 left-[10%] 
+            absolute top-0 left-[10%] z-10
             w-[calc(215*var(--parent-scale))]
             -translate-y-[calc(220*var(--parent-scale))]
             "
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div>
+          <div className="relative">
             <Image
               src={
                 "https://res.cloudinary.com/dzktdrw7o/image/upload/v1756863151/rocket-ai/00637-3702098316_1_am9wfl.png"
@@ -122,8 +122,9 @@ export default function Home() {
               width={1000}
               height={1000}
             />
+            <div className="absolute  left-0 right-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-zinc-50"></div>
+            {/* <div className="absolute left-0 right-0 bottom-0 h-1/2 bg-gradient-to-b from-[rgba(243,242,239,0)] to-[#F3F2EF]"></div> */}
           </div>
-          <div className="py-5"></div>
           <Sajupalza />
         </div>
       </section>
