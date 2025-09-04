@@ -27,8 +27,8 @@ export default function Home() {
           <div
             className="
             absolute bottom-0 left-[10%] 
-            w-[calc(215*var(--scale))]
-            mb-[calc(30*var(--scale))]
+            w-[calc(215*var(--parent-scale))]
+            mb-[calc(30*var(--parent-scale))]
             "
           >
             {/* 이미지 */}
@@ -49,9 +49,10 @@ export default function Home() {
               className="text-black 
               absolute inset-0 
               flex flex-col items-center justify-center 
-              text-[clamp(8px,4vw,18px)]
-              pt-[calc(25*var(--scale))]
+              text-[clamp(0rem,3.5vw,1rem)]
+              pt-[calc(25*var(--parent-scale))]
               "
+              // text-[clamp(0rem,var(--text-size),1rem)]
             >
               <p>이제 본격적으로</p>
               <p>OO님의 사주팔자를</p>
@@ -75,7 +76,43 @@ export default function Home() {
         </div>
 
         {/* 블록 컨테이터 3 */}
-        <div>
+        <div className="relative">
+          {/* 말풍선(컨테이너) */}
+          <div
+            className="
+            absolute top-0 left-[10%] 
+            w-[calc(215*var(--parent-scale))]
+            -translate-y-[calc(220*var(--parent-scale))]
+            "
+          >
+            {/* 이미지 */}
+            <div>
+              <Image
+                src={
+                  "https://res.cloudinary.com/dzktdrw7o/image/upload/v1756863214/rocket-ai/Group_1410141534_k6kzhg.png"
+                }
+                width={1000}
+                height={1000}
+                alt=""
+              />
+            </div>
+
+            {/* 텍스트 */}
+            <div
+              // --scale변수에서 사용된 %는 텍스트에 적용되지 않는다. 텍스트는 vw에 반응하도록 clamp 처리
+              className="text-black 
+              absolute inset-0 
+              flex flex-col items-center justify-center 
+              text-[clamp(0rem,3.5vw,1rem)]
+              pb-[calc(25*var(--parent-scale))]
+              "
+              // text-[clamp(0rem,var(--text-size),1rem)]
+            >
+              <p>제가 oo님의 사주를</p>
+              <p>보기 쉽게 표로 정리했어요</p>
+            </div>
+          </div>
+
           <div>
             <Image
               src={
@@ -99,8 +136,8 @@ export default function Home() {
 // 1. 여자 배경 이미지
 // 이미지 -> aspect-[1/2] 로 가로세로가 부모요소에 반응
 // 2. 말풍선
-// 컨테이너 -> w-[calc(215*var(--scale))] 으로 가로크기가 부모요소에 반응 (스케일은 %)
-// 컨테이너 -> mb-[calc(30*var(--scale))] 으로 위치조정하는데 부모요소에 반응
+// 컨테이너 -> w-[calc(215*var(--parent-scale))] 으로 가로크기가 부모요소에 반응 (스케일은 %)
+// 컨테이너 -> mb-[calc(30*var(--parent-scale))] 으로 위치조정하는데 부모요소에 반응
 // 이미지 -> 원본 이미지 비율
 // 텍스트 -> text-[clamp(8px,4vw,18px)] 으로 크기가 뷰포트에 반응
-// 텍스트 -> pt-[calc(25*var(--scale))] 으로 위치조정하는데 부모요소에 반응
+// 텍스트 -> pt-[calc(25*var(--parent-scale))] 으로 위치조정하는데 부모요소에 반응

@@ -82,7 +82,7 @@ export default function Sajupalza() {
         />
       </div>
 
-      <table className="w-[80%] mx-auto translate-y-[calc(170*var(--scale))]">
+      <table className="w-[80%] mx-auto translate-y-[calc(170*var(--parent-scale))]">
         <thead>
           <tr>
             <th></th>
