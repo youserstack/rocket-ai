@@ -122,8 +122,7 @@ export default function Home() {
               width={1000}
               height={1000}
             />
-            <div className="absolute  left-0 right-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-zinc-50"></div>
-            {/* <div className="absolute left-0 right-0 bottom-0 h-1/2 bg-gradient-to-b from-[rgba(243,242,239,0)] to-[#F3F2EF]"></div> */}
+            <div className="absolute left-0 right-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-zinc-50"></div>
           </div>
           <Sajupalza />
         </div>
