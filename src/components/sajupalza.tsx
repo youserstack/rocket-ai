@@ -70,7 +70,7 @@ export default function Sajupalza() {
   ];
 
   return (
-    <div className="relative -translate-y-5">
+    <div className="relative -translate-y-5 z-[10]">
       <div className="absolute inset-0 z-[-1] ">
         <Image
           src={

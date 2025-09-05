@@ -127,6 +127,7 @@ export default function Home() {
               bg-gradient-to-b from-transparent to-zinc-50"
             ></div>
           </div>
+
           <Sajupalza />
         </div>
       </section>
