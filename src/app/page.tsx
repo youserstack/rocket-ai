@@ -113,7 +113,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
+          <div
+            className="relative
+              after:content-['']
+              after:absolute
+              after:left-0
+              after:right-0
+              after:bottom-0
+              after:h-1/2
+              after:bg-gradient-to-b
+              after:from-transparent
+              after:to-zinc-50
+              "
+          >
             <Image
               src={
                 "https://res.cloudinary.com/dzktdrw7o/image/upload/v1756863151/rocket-ai/00637-3702098316_1_am9wfl.png"
@@ -121,12 +133,11 @@ export default function Home() {
               alt=""
               width={1000}
               height={1000}
-              className="relative z-[1]"
             />
-            <div
+            {/* <div
               className="absolute left-0 right-0 bottom-0 h-1/2 z-[5]
               bg-gradient-to-b from-transparent to-zinc-50"
-            ></div>
+            ></div> */}
           </div>
 
           <Sajupalza />
